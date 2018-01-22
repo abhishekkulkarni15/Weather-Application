@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="myModule" ng-controller="myController">
+<head>
+	<title>Weather Application</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/angular.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<input ng-model="location" type="text" id="cityName" placeholder="Enter City Name" value="dallas" autofocus="true">
+		<button type="button" id="button" class="btn btn-success" ng-click="getWeather()">Get Weather</button>
+	</div>
+	<div ng-show="displayWeather" class="container col-sm-8" id="weatherDetails">
+		<div id="currentWeather">
+			<div>
+				Showing weather for<br/> {{ result.query.results.channel.location.city +", "+ result.query.results.channel.location.region +", "+result.query.results.channel.location.country}}<br/>
+			</div>
+			<div>
+				Date <br/>{{ result.query.results.channel.item.condition.date }}<br/>
+			</div>
+			<div>
+				Temperature <br/>{{ result.query.results.channel.item.condition.temp }} &#8457<br/>
+			</div>
+			<div>
+				Condition <br/>{{ result.query.results.channel.item.condition.text }}
+			</div>
+		</div>
+		<div align="center">
+			<div class="forecastWeather">
+				{{ result.query.results.channel.item.forecast[0].date }}<br/>	
+				{{ result.query.results.channel.item.forecast[0].day }}<br/>
+				{{ result.query.results.channel.item.forecast[0].high }}<br/>	
+				{{ result.query.results.channel.item.forecast[0].low }}<br/>	
+				{{ result.query.results.channel.item.forecast[0].text }}<br/>	
+			</div>
+			<div class="forecastWeather">
+				{{ result.query.results.channel.item.forecast[1].date }}<br/>	
+				{{ result.query.results.channel.item.forecast[1].day }}<br/>
+				{{ result.query.results.channel.item.forecast[1].high }}<br/>	
+				{{ result.query.results.channel.item.forecast[1].low }}<br/>	
+				{{ result.query.results.channel.item.forecast[1].text }}<br/>	
+			</div>
+			<div class="forecastWeather">
+				{{ result.query.results.channel.item.forecast[2].date }}<br/>	
+				{{ result.query.results.channel.item.forecast[2].day }}<br/>
+				{{ result.query.results.channel.item.forecast[2].high }}<br/>	
+				{{ result.query.results.channel.item.forecast[2].low }}<br/>	
+				{{ result.query.results.channel.item.forecast[2].text }}<br/>	
+			</div>
+			<div class="forecastWeather">
+				{{ result.query.results.channel.item.forecast[3].date }}<br/>	
+				{{ result.query.results.channel.item.forecast[3].day }}<br/>
+				{{ result.query.results.channel.item.forecast[3].high }}<br/>	
+				{{ result.query.results.channel.item.forecast[3].low }}<br/>	
+				{{ result.query.results.channel.item.forecast[3].text }}<br/>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>

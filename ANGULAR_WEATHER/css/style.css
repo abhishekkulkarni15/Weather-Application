@@ -1,0 +1,45 @@
+div{
+	text-align: center;
+	padding: 20px;
+}
+
+#button{
+	border-radius: 0px;
+}
+
+body{
+	background-image: url("../images/weather.jpg");
+}
+
+label{
+	color: white;
+	text-transform: uppercase;
+	font-family: monospace;
+	font-size: 150%;
+}
+
+input{
+	text-align: center;
+	background-color: transparent;
+	color: white;
+	border:none;
+	text-transform: capitalize;
+}
+
+#weatherDetails{
+	color: black;
+}
+
+.forecastWeather{
+	background-color: #ffffff;
+	opacity: 0.6;
+	margin: 10px;
+	text-align:center;
+}
+
+#currentWeather{
+	background-color: #ffffff;
+	opacity: 0.6;
+	margin: 10px;
+	text-align:center;
+}
